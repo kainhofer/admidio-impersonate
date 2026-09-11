@@ -1,0 +1,16 @@
+/*
+ * Loaded only while an administrator acts as another user, so that every screen of the session
+ * looks different and nobody forgets whose account they are in.
+ */
+#adm_main_navbar {
+    background: repeating-linear-gradient(135deg, #ffc107 0, #ffc107 18px, #ffda6a 18px, #ffda6a 36px) !important;
+}
+
+#adm_sidebar {
+    background-color: #fff3cd !important;
+    box-shadow: inset -4px 0 0 #ffc107;
+}
+
+#adm_plg_impersonate_banner {
+    border: 2px solid #ffc107;
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string name="PLG_IMPERSONATE_ACTION">Als #VAR1# handeln</string>
+  <string name="PLG_IMPERSONATE_ACTIVE">Aktiv</string>
+  <string name="PLG_IMPERSONATE_ADMINISTRATOR">Administrator</string>
+  <string name="PLG_IMPERSONATE_ALL_ADMINISTRATORS">Alle Administratoren</string>
+  <string name="PLG_IMPERSONATE_ALREADY_ACTIVE">Sie handeln bereits als ein anderer Benutzer. Kehren Sie zuerst zu Ihrem eigenen Konto zurück.</string>
+  <string name="PLG_IMPERSONATE_BANNER">Sie handeln als #VAR1#. Alles, was Sie tun, geschieht im Namen dieses Benutzers und wird im Änderungsprotokoll markiert. Ihr eigenes Konto ist #VAR2#; um #VAR3# kehren Sie automatisch dorthin zurück.</string>
+  <string name="PLG_IMPERSONATE_BEGIN">Beginn</string>
+  <string name="PLG_IMPERSONATE_BLOCKED_MESSAGES">Nachrichten und E-Mails können nicht versendet werden, während Sie als ein anderer Benutzer handeln. Kehren Sie zu Ihrem eigenen Konto zurück, um sie in Ihrem Namen zu senden.</string>
+  <string name="PLG_IMPERSONATE_BLOCKED_SSO">Single-Sign-On ist nicht verfügbar, während Sie als ein anderer Benutzer handeln, damit keine andere Anwendung mit der Identität dieses Benutzers angemeldet wird. Kehren Sie zuerst zu Ihrem eigenen Konto zurück.</string>
+  <string name="PLG_IMPERSONATE_CHANGELOG_COMMENT">Stellvertretend durch #VAR1#</string>
+  <string name="PLG_IMPERSONATE_CONFIRM">Möchten Sie als #VAR1# handeln? Bis Sie zu Ihrem eigenen Konto zurückkehren, verhält sich Admidio genau so, als hätte sich #VAR1# selbst angemeldet. Jede Änderung, die Sie vornehmen, wird im Änderungsprotokoll markiert.</string>
+  <string name="PLG_IMPERSONATE_DESCRIPTION">Erlaubt Administratoren, als ein anderer Benutzer zu handeln und genau das zu sehen, was dieser Benutzer sieht. Ein Link in der Kontaktliste wechselt die Sitzung zu diesem Benutzer, beim Abmelden kehrt der Administrator zu seinem eigenen Konto zurück. Jede Änderung in dieser Zeit wird im Änderungsprotokoll markiert und jeder Wechsel wird aufgezeichnet.</string>
+  <string name="PLG_IMPERSONATE_END">Ende</string>
+  <string name="PLG_IMPERSONATE_END_LOGOUT">Abmeldung</string>
+  <string name="PLG_IMPERSONATE_END_LOST">Sitzung beendet</string>
+  <string name="PLG_IMPERSONATE_END_STOP">Vom Administrator beendet</string>
+  <string name="PLG_IMPERSONATE_END_TIMEOUT">Zeitlimit</string>
+  <string name="PLG_IMPERSONATE_ENDED_BY">Beendet durch</string>
+  <string name="PLG_IMPERSONATE_HISTORY">Protokoll der Benutzerwechsel</string>
+  <string name="PLG_IMPERSONATE_HISTORY_DESC">Jedes Mal, wenn ein Administrator dieser Organisation als ein anderer Benutzer gehandelt hat. Angezeigt werden die letzten 500.</string>
+  <string name="PLG_IMPERSONATE_HISTORY_EMPTY">Bisher hat kein Administrator als ein anderer Benutzer gehandelt.</string>
+  <string name="PLG_IMPERSONATE_IP_ADDRESS">IP-Adresse</string>
+  <string name="PLG_IMPERSONATE_LOST">Die Rückkehr zu Ihrem eigenen Konto konnte nicht überprüft werden. Aus Sicherheitsgründen wurden Sie abgemeldet.</string>
+  <string name="PLG_IMPERSONATE_MAX_MINUTES">Zeitlimit in Minuten</string>
+  <string name="PLG_IMPERSONATE_MAX_MINUTES_DESC">Gezählt ab dem Moment, in dem der Administrator beginnt, als ein anderer Benutzer zu handeln. Danach kehrt der Administrator automatisch zu seinem eigenen Konto zurück.</string>
+  <string name="PLG_IMPERSONATE_NAME">Als Benutzer handeln</string>
+  <string name="PLG_IMPERSONATE_NOTIFICATION_NOTE">[stellvertretend durch #VAR1#]</string>
+  <string name="PLG_IMPERSONATE_NOTIFY_SUBJECT">Ein Administrator handelt in #VAR1# in Ihrem Namen</string>
+  <string name="PLG_IMPERSONATE_NOTIFY_TEXT">Hallo #VAR1#, der Administrator #VAR2# hat am #VAR4# begonnen, in #VAR3# in Ihrem Namen zu handeln, meist um herauszufinden, warum bei Ihnen etwas nicht funktioniert. Änderungen in dieser Zeit werden im Änderungsprotokoll markiert. Falls Sie das nicht erwartet haben, wenden Sie sich bitte an die Administratoren von #VAR3#.</string>
+  <string name="PLG_IMPERSONATE_NOTIFY_USER">Benutzer benachrichtigen</string>
+  <string name="PLG_IMPERSONATE_NOTIFY_USER_DESC">Sendet dem Benutzer eine E-Mail, wenn ein Administrator beginnt, in seinem Namen zu handeln. Benutzer ohne E-Mail-Adresse werden nicht benachrichtigt.</string>
+  <string name="PLG_IMPERSONATE_ROLES">Administratoren, die als andere Benutzer handeln dürfen</string>
+  <string name="PLG_IMPERSONATE_ROLES_DESC">Nur Administratoren können als andere Benutzer handeln. Werden hier statt aller Administratoren Rollen ausgewählt, können das nur Administratoren, die Mitglied mindestens einer dieser Rollen sind.</string>
+  <string name="PLG_IMPERSONATE_STATUS_UNFINISHED">Nicht beendet (Sitzung abgelaufen)</string>
+  <string name="PLG_IMPERSONATE_STOP">Zurück zu meinem Konto</string>
+  <string name="PLG_IMPERSONATE_STOPPED">Sie sind wieder in Ihrem eigenen Konto.</string>
+  <string name="PLG_IMPERSONATE_SUBSET_ONLY">Nur Benutzer mit weniger Rechten</string>
+  <string name="PLG_IMPERSONATE_SUBSET_ONLY_DESC">Ist dies aktiviert, kann ein Administrator nur als ein Benutzer handeln, dessen Rollen der Administrator entweder teilt oder administriert. Das verhindert, als ein Benutzer zu handeln, der in einer anderen Organisation Rechte hat, die der Administrator nicht hat.</string>
+  <string name="PLG_IMPERSONATE_TARGET_INVALID">Dieser Kontakt hat kein aktives Konto, das verwendet werden könnte.</string>
+  <string name="PLG_IMPERSONATE_TARGET_MORE_RIGHTS">Dieser Benutzer ist Mitglied von Rollen einer anderen Organisation, die Sie weder teilen noch administrieren. Als dieser Benutzer zu handeln würde Ihnen Rechte geben, die Sie nicht haben. Das kann in den Einstellungen des Plugins erlaubt werden.</string>
+  <string name="PLG_IMPERSONATE_TARGET_NOT_MEMBER">Dieser Benutzer ist kein Mitglied der aktuellen Organisation.</string>
+  <string name="PLG_IMPERSONATE_TARGET_SELF">Sie können nicht als Sie selbst handeln.</string>
+  <string name="PLG_IMPERSONATE_TIMEOUT">Das Zeitlimit für das Handeln als anderer Benutzer ist abgelaufen. Sie sind wieder in Ihrem eigenen Konto.</string>
+  <string name="PLG_IMPERSONATE_USER">Gehandelt als</string>
+</resources>

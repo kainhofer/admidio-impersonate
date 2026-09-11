@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string name="PLG_IMPERSONATE_ACTION">Act as #VAR1#</string>
+  <string name="PLG_IMPERSONATE_ACTIVE">Active</string>
+  <string name="PLG_IMPERSONATE_ADMINISTRATOR">Administrator</string>
+  <string name="PLG_IMPERSONATE_ALL_ADMINISTRATORS">All administrators</string>
+  <string name="PLG_IMPERSONATE_ALREADY_ACTIVE">You are already acting as another user. Return to your own account first.</string>
+  <string name="PLG_IMPERSONATE_BANNER">You are acting as #VAR1#. Everything you do is done in the name of this user and marked in the change history. Your own account is #VAR2#; you will be returned to it automatically at #VAR3#.</string>
+  <string name="PLG_IMPERSONATE_BEGIN">Started</string>
+  <string name="PLG_IMPERSONATE_BLOCKED_MESSAGES">Messages and emails cannot be sent while you act as another user. Return to your own account to send them in your own name.</string>
+  <string name="PLG_IMPERSONATE_BLOCKED_SSO">Single sign-on is not available while you act as another user, so that no other application is logged in with the identity of this user. Return to your own account first.</string>
+  <string name="PLG_IMPERSONATE_CHANGELOG_COMMENT">Impersonated by #VAR1#</string>
+  <string name="PLG_IMPERSONATE_CONFIRM">Do you want to act as #VAR1#? Until you return to your own account, Admidio behaves exactly as if #VAR1# had logged in. Every change you make is marked in the change history.</string>
+  <string name="PLG_IMPERSONATE_DESCRIPTION">Lets administrators act as another user, to see exactly what that user sees. A link in the contacts list switches the session to the user, and logging out returns the administrator to their own account. Every change made meanwhile is marked in the change history, and every impersonation is recorded.</string>
+  <string name="PLG_IMPERSONATE_END">Ended</string>
+  <string name="PLG_IMPERSONATE_END_LOGOUT">Logout</string>
+  <string name="PLG_IMPERSONATE_END_LOST">Session ended</string>
+  <string name="PLG_IMPERSONATE_END_STOP">Returned by the administrator</string>
+  <string name="PLG_IMPERSONATE_END_TIMEOUT">Time limit</string>
+  <string name="PLG_IMPERSONATE_ENDED_BY">Ended by</string>
+  <string name="PLG_IMPERSONATE_HISTORY">Impersonation history</string>
+  <string name="PLG_IMPERSONATE_HISTORY_DESC">Every time an administrator of this organization acted as another user. The most recent 500 are shown.</string>
+  <string name="PLG_IMPERSONATE_HISTORY_EMPTY">No administrator has acted as another user yet.</string>
+  <string name="PLG_IMPERSONATE_IP_ADDRESS">IP address</string>
+  <string name="PLG_IMPERSONATE_LOST">Your return to your own account could not be verified. For safety reasons you have been logged out.</string>
+  <string name="PLG_IMPERSONATE_MAX_MINUTES">Time limit in minutes</string>
+  <string name="PLG_IMPERSONATE_MAX_MINUTES_DESC">Counted from the moment the administrator starts acting as another user. When it has passed, the administrator is returned to their own account automatically.</string>
+  <string name="PLG_IMPERSONATE_NAME">Impersonate</string>
+  <string name="PLG_IMPERSONATE_NOTIFICATION_NOTE">[impersonated by #VAR1#]</string>
+  <string name="PLG_IMPERSONATE_NOTIFY_SUBJECT">An administrator is acting as you in #VAR1#</string>
+  <string name="PLG_IMPERSONATE_NOTIFY_TEXT">Hello #VAR1#, the administrator #VAR2# started acting as you in #VAR3# at #VAR4#, usually to find out why something does not work for you. Changes made meanwhile are marked in the change history. If you did not expect this, please contact the administrators of #VAR3#.</string>
+  <string name="PLG_IMPERSONATE_NOTIFY_USER">Notify the user</string>
+  <string name="PLG_IMPERSONATE_NOTIFY_USER_DESC">Sends the user an email when an administrator starts acting as them. Users without an email address are not notified.</string>
+  <string name="PLG_IMPERSONATE_ROLES">Administrators who may act as other users</string>
+  <string name="PLG_IMPERSONATE_ROLES_DESC">Only administrators can act as other users. If roles are selected here instead of all administrators, only administrators who are members of at least one of these roles can do so.</string>
+  <string name="PLG_IMPERSONATE_STATUS_UNFINISHED">Not ended (session expired)</string>
+  <string name="PLG_IMPERSONATE_STOP">Return to my account</string>
+  <string name="PLG_IMPERSONATE_STOPPED">You are back in your own account.</string>
+  <string name="PLG_IMPERSONATE_SUBSET_ONLY">Only users with fewer rights</string>
+  <string name="PLG_IMPERSONATE_SUBSET_ONLY_DESC">If this is enabled, an administrator can only act as a user whose roles the administrator either shares or administers. This prevents acting as a user who has rights in another organization that the administrator does not have.</string>
+  <string name="PLG_IMPERSONATE_TARGET_INVALID">This contact has no active account that could be used.</string>
+  <string name="PLG_IMPERSONATE_TARGET_MORE_RIGHTS">This user is a member of roles in another organization that you neither share nor administer. Acting as this user would give you rights you do not have. This can be allowed in the preferences of the plugin.</string>
+  <string name="PLG_IMPERSONATE_TARGET_NOT_MEMBER">This user is not a member of the current organization.</string>
+  <string name="PLG_IMPERSONATE_TARGET_SELF">You cannot act as yourself.</string>
+  <string name="PLG_IMPERSONATE_TIMEOUT">The time limit for acting as another user has passed. You are back in your own account.</string>
+  <string name="PLG_IMPERSONATE_USER">Acted as</string>
+</resources>

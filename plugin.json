@@ -1,0 +1,47 @@
+{
+    "name": "PLG_IMPERSONATE_NAME",
+    "description": "PLG_IMPERSONATE_DESCRIPTION",
+    "version": "1.0.0",
+    "author": "Reinhold Kainhofer",
+    "url": "https://www.admidio.org",
+    "icon": "bi-incognito",
+    "menu": false,
+    "requires": {
+        "admidio": ">=5.1",
+        "php": ">=8.2"
+    },
+    "autoload": {
+        "AdmidioPlugin\\Impersonate\\": "src/"
+    },
+    "preferences": {
+        "section": "login_security"
+    },
+    "settings": {
+        "impersonate_roles": {
+            "type": "array",
+            "default": ["All"],
+            "label": "PLG_IMPERSONATE_ROLES",
+            "description": "PLG_IMPERSONATE_ROLES_DESC"
+        },
+        "impersonate_targets_subset_only": {
+            "type": "boolean",
+            "default": true,
+            "label": "PLG_IMPERSONATE_SUBSET_ONLY",
+            "description": "PLG_IMPERSONATE_SUBSET_ONLY_DESC"
+        },
+        "impersonate_max_minutes": {
+            "type": "integer",
+            "default": 30,
+            "min": 1,
+            "step": 1,
+            "label": "PLG_IMPERSONATE_MAX_MINUTES",
+            "description": "PLG_IMPERSONATE_MAX_MINUTES_DESC"
+        },
+        "impersonate_notify_user": {
+            "type": "boolean",
+            "default": false,
+            "label": "PLG_IMPERSONATE_NOTIFY_USER",
+            "description": "PLG_IMPERSONATE_NOTIFY_USER_DESC"
+        }
+    }
+}
