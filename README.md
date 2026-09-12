@@ -4,16 +4,34 @@ A third-party plugin for Admidio 5.1 that lets an administrator act as another u
 something does not work for them. For the duration, Admidio behaves exactly as if that user had logged
 in: the same menu, the same rights, the same lists and profile fields.
 
+
+## Installation
+
+As administrator, go to Admidio's plugin manager (Admidio 5.1 or later required!), select "Add plugin" and upload the plugin zip file ''impersonate-1.0.0.zip''.
+<img src="images/00b-impersonate-install.png" alt="Uploading the plugin file in the plugin manager" width="400">
+<img src="images/00a-impersonate-install.png" alt="Add plugin button in the plugin manager" width="600">
+<img src="images/01-impersonate-plugin-manager.png" alt="Enabling the plugin" width="600">
+
 ## How to impersonate
 
-Once the plugin is installed and enabled in Admidio's plugin manager, the contacts list shows
-little "impersonate" icons for each user. Clicking on it makes the administrator assume the 
+Once the plugin is installed and enabled in Admidio's plugin manager,
+the contacts list shows little "impersonate" icons for each user. 
+
+<img src="images/04-impersonate-plugin-userlist.png" alt="Impersonate icons in the contacts list" width="600">
+
+<img src="images/05-impersonate-plugin-userlist-ask.png" alt="Impersonate a user" width="400">
+
+Clicking on it makes the administrator assume the 
 identity of the corresponding user. 
+
+<img src="images/06-impersonate-plugin-impersonating-design.png" alt="Impersonate a user" width="600">
 
 While impersonating another user, the design of the Admidio installation changes clearly 
 to keep the administrator reminded. After a certain, configurable time, the impersonation 
 is automatically ended and the session returns to the administrator user. Manual logout 
 before the timeout also ends the impersonation.
+
+<img src="images/07-impersonate-plugin-end.png" alt="Ending an impersonation" width="600">
 
 ## What it does
 
@@ -32,6 +50,8 @@ before the timeout also ends the impersonation.
 * **History:** every impersonation is recorded with the administrator, the user, the start, the end,
   how it ended and the IP address. The preferences panel links to the history page.
 
+<img src="images/03-impersonate-plugin-history.png" alt="Impersonate history" width="600">
+
 ## What is refused while acting as a user
 
 * **Single sign-on** (`modules/sso/index.php`): no other application may be logged in with the
@@ -42,9 +62,13 @@ before the timeout also ends the impersonation.
 Everything else is allowed, including changing the password, the email address or deleting the
 account — an administrator can do all of that without acting as the user as well.
 
+
 ## Settings
 
 *Administration → Preferences → Login & security → Impersonate*
+
+<img src="images/02-impersonate-plugin-settings.png" alt="Plugin settings" width="600">
+
 
 | Setting | Default | Meaning |
 |---|---|---|
