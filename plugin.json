@@ -3,7 +3,7 @@
     "description": "PLG_IMPERSONATE_DESCRIPTION",
     "version": "1.0.0",
     "author": "Reinhold Kainhofer",
-    "url": "https://www.admidio.org",
+    "url": "https://github.com/kainhofer/admidio-impersonate/",
     "icon": "bi-incognito",
     "menu": false,
     "requires": {
