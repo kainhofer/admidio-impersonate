@@ -1,4 +1,17 @@
-CREATE TABLE %PREFIX%_plugin_impersonations
+/*
+ * Database structure of the impersonation plugin.
+ *
+ * The file has to be idempotent: enabling a plugin for the first organization is what installs it,
+ * so this also runs on an installation that still carries the table of an earlier enable - the data
+ * is an audit trail and is kept.
+ *
+ * Only PRIMARY KEY and UNIQUE are declared, both inside the table: they are standard SQL and are
+ * skipped together with the table, which is what keeps this file repeatable. A standalone
+ * CREATE INDEX could not be, because neither engine knows CREATE INDEX IF NOT EXISTS on both sides
+ * and Postgres does not accept the MySQL KEY clause that Admidio does not rewrite.
+ */
+
+CREATE TABLE IF NOT EXISTS %PREFIX%_plugin_impersonations
 (
     imp_id                      integer unsigned    NOT NULL    AUTO_INCREMENT,
     imp_uuid                    varchar(36)         NOT NULL,
@@ -13,12 +26,9 @@ CREATE TABLE %PREFIX%_plugin_impersonations
     imp_begin                   timestamp           NOT NULL    DEFAULT CURRENT_TIMESTAMP,
     imp_end                     timestamp           NULL        DEFAULT NULL,
     imp_end_reason              varchar(20)         NULL,
-    PRIMARY KEY (imp_id)
+    PRIMARY KEY (imp_id),
+    CONSTRAINT %PREFIX%_idx_plugin_imp_uuid UNIQUE (imp_uuid)
 )
 ENGINE = InnoDB
 DEFAULT CHARSET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
-
-CREATE UNIQUE INDEX %PREFIX%_idx_plugin_imp_uuid ON %PREFIX%_plugin_impersonations (imp_uuid);
-
-CREATE INDEX %PREFIX%_idx_plugin_imp_org_begin ON %PREFIX%_plugin_impersonations (imp_org_id, imp_begin);
