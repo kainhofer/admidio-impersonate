@@ -1,6 +1,7 @@
 # Admidio Impersonate Plugin — act as another user
 
-A third-party plugin for Admidio 5.1 that lets an administrator act as another user, to find out why
+A third-party plugin for Admidio 6.0 and later that lets an administrator act as another user, to make 
+changes on behalf of them or to find out why
 something does not work for them. For the duration, Admidio behaves exactly as if that user had logged
 in: the same menu, the same rights, the same lists and profile fields.
 
