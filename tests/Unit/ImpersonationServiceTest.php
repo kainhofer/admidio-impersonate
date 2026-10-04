@@ -34,13 +34,16 @@ final class ImpersonationServiceTest extends PluginTestCase
 
     public function testSendingMessagesAndECardsIsRefused(): void
     {
-        foreach (array('/messages/messages_send.php', '/photos/ecard_send.php') as $script) {
-            $this->assertSame(
-                'PLG_IMPERSONATE_BLOCKED_MESSAGES',
-                ImpersonationService::getBlockedMessage(ADMIDIO_PATH . FOLDER_MODULES . $script),
-                $script . ' is refused'
-            );
-        }
+        $this->assertSame(
+            'PLG_IMPERSONATE_BLOCKED_MESSAGES',
+            ImpersonationService::getBlockedMessage(ADMIDIO_PATH . FOLDER_MODULES . '/messages/messages_send.php'),
+            'sending a message is refused'
+        );
+        $this->assertSame(
+            'PLG_IMPERSONATE_BLOCKED_MESSAGES',
+            ImpersonationService::getBlockedMessage(ADMIDIO_PATH . FOLDER_MODULES . '/photos.php', 'ecard_send'),
+            'sending an e-card is refused'
+        );
     }
 
     public function testEverythingElseIsAllowed(): void
@@ -51,6 +54,7 @@ final class ImpersonationServiceTest extends PluginTestCase
             ADMIDIO_PATH . FOLDER_MODULES . '/profile/password.php' => 'the password can be changed, as an administrator could anyway',
             ADMIDIO_PATH . '/system/logout.php' => 'the logout returns to the administrator',
             ADMIDIO_PATH . '/does/not/exist.php' => 'a path that does not exist',
+            ADMIDIO_PATH . FOLDER_MODULES . '/photos.php' => 'the photo albums are no endpoint, only the sending of an e-card is',
             '' => 'a request without a script'
         );
 

@@ -395,37 +395,39 @@ final class ImpersonationService
     }
 
     /**
-     * The scripts that are refused during an impersonation, as path below the Admidio directory =>
-     * ID of the text that explains why.
+     * The scripts that are refused during an impersonation, as a list of path below the Admidio
+     * directory, ID of the text that explains why and, where only one mode of the script is refused,
+     * the value of its mode parameter.
      *
      * The single sign-on endpoints would log other applications in with the identity of the user.
      * Messages, emails and e-cards would go out in the name of the user.
-     * @return array<string,string>
+     * @return array<int,array{path: string, message: string, mode?: string}>
      */
     public static function getBlockedScripts(): array
     {
         return array(
-            FOLDER_MODULES . '/sso/index.php' => 'PLG_IMPERSONATE_BLOCKED_SSO',
-            FOLDER_MODULES . '/messages/messages_send.php' => 'PLG_IMPERSONATE_BLOCKED_MESSAGES',
-            FOLDER_MODULES . '/photos/ecard_send.php' => 'PLG_IMPERSONATE_BLOCKED_MESSAGES'
+            array('path' => FOLDER_MODULES . '/sso/index.php', 'message' => 'PLG_IMPERSONATE_BLOCKED_SSO'),
+            array('path' => FOLDER_MODULES . '/messages/messages_send.php', 'message' => 'PLG_IMPERSONATE_BLOCKED_MESSAGES'),
+            array('path' => FOLDER_MODULES . '/photos.php', 'message' => 'PLG_IMPERSONATE_BLOCKED_MESSAGES', 'mode' => 'ecard_send')
         );
     }
 
     /**
      * Why a script is refused during an impersonation, or **null** if it is not.
      * @param string $scriptFile The file system path of the script, as in SCRIPT_FILENAME.
+     * @param string $mode The value of the mode parameter of the request.
      * @return string|null
      */
-    public static function getBlockedMessage(string $scriptFile): ?string
+    public static function getBlockedMessage(string $scriptFile, string $mode = ''): ?string
     {
         $script = $scriptFile === '' ? false : realpath($scriptFile);
         if ($script === false) {
             return null;
         }
 
-        foreach (self::getBlockedScripts() as $path => $messageId) {
-            if (realpath(ADMIDIO_PATH . $path) === $script) {
-                return $messageId;
+        foreach (self::getBlockedScripts() as $blocked) {
+            if (realpath(ADMIDIO_PATH . $blocked['path']) === $script && $mode === ($blocked['mode'] ?? $mode)) {
+                return $blocked['message'];
             }
         }
 
@@ -583,7 +585,7 @@ final class ImpersonationService
     {
         global $gMessage, $gL10n;
 
-        $messageId = self::getBlockedMessage((string)($_SERVER['SCRIPT_FILENAME'] ?? ''));
+        $messageId = self::getBlockedMessage((string)($_SERVER['SCRIPT_FILENAME'] ?? ''), (string)($_GET['mode'] ?? ''));
         if ($messageId === null) {
             return;
         }
